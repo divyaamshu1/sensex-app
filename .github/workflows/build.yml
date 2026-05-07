@@ -46,7 +46,8 @@ jobs:
         working-directory: backend
         run: |
           CGO_ENABLED=0 GOOS=android GOARCH=arm GOARM=7 \
-            go build -ldflags="-s -w" \
+            go build -tags netgo \
+            -ldflags="-s -w -linkmode internal" \
             -o ../dist/sensex-server-android-arm \
             ./cmd/server
 
