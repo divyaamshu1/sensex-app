@@ -1,0 +1,22 @@
+{
+  "appId": "com.sensexlive.app",
+  "appName": "SENSEX Live",
+  "webDir": "build",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false,
+    "backgroundColor": "#f8f7f4"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 600,
+      "backgroundColor": "#f8f7f4",
+      "showSpinner": false
+    }
+  }
+}

@@ -1,0 +1,7 @@
+include ':app'
+
+// Capacitor Android library (added by `npx cap add android`)
+// The CI step runs `npx cap sync android` which places it at node_modules/@capacitor/android
+def capacitorAndroidPath = new File(['node', '--print', "require.resolve('@capacitor/android/package.json')"].execute(null, rootDir).text.trim()).getParentFile().absolutePath
+project(':capacitor-android').projectDir = new File(capacitorAndroidPath, 'android')
+include ':capacitor-android'
