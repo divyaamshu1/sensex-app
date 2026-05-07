@@ -42,15 +42,6 @@ jobs:
             -o ../dist/sensex-server-android-arm64 \
             ./cmd/server
 
-      - name: Build Android ARM  (older phones)
-        working-directory: backend
-        run: |
-          CGO_ENABLED=0 GOOS=android GOARCH=arm GOARM=7 \
-            go build -tags netgo \
-            -ldflags="-s -w -linkmode internal" \
-            -o ../dist/sensex-server-android-arm \
-            ./cmd/server
-
       - name: Upload backend binaries
         uses: actions/upload-artifact@v4
         with:
